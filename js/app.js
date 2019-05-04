@@ -1,7 +1,10 @@
 // Enemies our player must avoid
+// Variables applied to each of our instances go here,
+// we've provided one for you to get started
+
+// setting x and y values(position) of enemies
+// when an instance is created(CONTRUCTOR)
 var Enemy = function(x, y, speed) {
-  // Variables applied to each of our instances go here,
-  // we've provided one for you to get started
   this.x = x;
   this.y = y;
   this.speed = speed;
@@ -13,15 +16,17 @@ var Enemy = function(x, y, speed) {
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
+// You should multiply any movement by the dt parameter
+// which will ensure the game runs at the same speed for
+// all computers.
 Enemy.prototype.update = function(dt) {
-  // You should multiply any movement by the dt parameter
-  // which will ensure the game runs at the same speed for
-  // all computers.
+  // setting speed for each enemy
   this.x = this.x + this.speed * dt;
   if (this.x > 505) {
     this.x = 0;
     this.speed = 100 + Math.floor((Math.random() ^ 150) + 1);
   }
+  // conditons for collision
   if (player.x < this.x + 60 && player.x + 62 > this.x && player.y < this.y + 60 && player.y + 65 > this.y) {
     player.x = 200;
     player.y = 410;
@@ -32,32 +37,35 @@ Enemy.prototype.update = function(dt) {
 Enemy.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-
-
-
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+// created allEnemies to store instances of enemies
 var allEnemies = [];
+// Y coordinates for enemies
 var enemies = [60, 140, 230];
+// speeds for enemies
 var speeds = [300, 200, 230];
+// X coordinates for enemies
 var pos = [100, 0, 50];
+// creating instances of enemies
 for (i = 0; i < enemies.length; i++) {
+  // passing parameters to constructor
   var obj = new Enemy(pos[i], enemies[i], speeds[i]);
+  //adding instances into allEnemies array
   allEnemies.push(obj);
 }
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+
+// constructor for player
 var Player = function(x, y) {
   this.x = x;
   this.y = y;
   this.sprite = 'images/char-boy.png';
 };
+//update()
 Player.prototype.update = function(dt) {
   if (player.y < 0) {
 
@@ -67,20 +75,28 @@ Player.prototype.update = function(dt) {
     }, 1000);
   }
 };
+//render()
 Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+// instance for  player
 var player = new Player(200, 410);
 player.handleInput = function(e) {
+  //for moving player when key is pressed and
+  // conditons to make player not to move off the screen
+  //left
   if (e == 'left' && this.x > 0) {
     this.x = this.x - 100;
   }
+  //right
   if (e == 'right' && this.x < 350) {
     this.x = this.x + 100;
   }
+  // up
   if (e == 'up' && this.y > 0) {
     this.y = this.y - 84;
   }
+  //down
   if (e == 'down' && this.y < 350) {
     this.y = this.y + 84;
   }
