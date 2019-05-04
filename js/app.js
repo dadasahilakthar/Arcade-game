@@ -72,7 +72,7 @@ Player.prototype.update = function(dt) {
     setTimeout(function() {
       player.x = 200;
       player.y = 410;
-    }, 1000);
+    }, 200);
   }
 };
 //render()
