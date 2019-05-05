@@ -8,17 +8,12 @@ class Enemy {
     this.x = x;
     this.y = y;
     this.speed = speed;
+    //The image/sprite for our enemies, this uses
+    //a helper we've provided to easily load image.
     this.sprite = 'images/enemy-bug.png';
   }
 }
-
-//
-//   // The image/sprite for our enemies, this uses
-//   // a helper we've provided to easily load images
-//   this.sprite = 'images/enemy-bug.png';
-// };
-
-// Update the enemy's position, required method for game
+//Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 // You should multiply any movement by the dt parameter
 // which will ensure the game runs at the same speed for
@@ -32,6 +27,7 @@ Enemy.prototype.update = function(dt) {
   }
   // conditons for collision
   if (player.x < this.x + 60 && player.x + 62 > this.x && player.y < this.y + 60 && player.y + 65 > this.y) {
+    // resetting the players position
     player.x = 200;
     player.y = 410;
   }
@@ -44,6 +40,7 @@ Enemy.prototype.render = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+
 // created allEnemies to store instances of enemies
 var allEnemies = [];
 // Y coordinates for enemies
@@ -98,7 +95,7 @@ Player.prototype.handleInput = function(e) {
   if (e == 'right' && this.x < 350) {
     this.x = this.x + 100;
   }
-  // up
+  //up
   if (e == 'up' && this.y > 0) {
     this.y = this.y - 84;
   }

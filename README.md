@@ -21,9 +21,8 @@ This repository is the starter code for _all_ Udacity students. Therefore,  we m
 
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
-
 # Aim of the project
-s
+
 To run and play the Arcade game with the help of Object oriented java script.
 
 # Cloning of the Project
@@ -33,6 +32,7 @@ To run and play the Arcade game with the help of Object oriented java script.
 3.  We need to make the changes only in the app.js file.
 
 ## What I have done to this Project
+
 1.  We need to resolve some errors in app.js file by running the index file in console.
 2.  After resolving the errors we get the canvas of the arcade game.
 3.  Then we need to add the player object and add enemy object to the canvas.
@@ -41,7 +41,7 @@ To run and play the Arcade game with the help of Object oriented java script.
 6.  We can give the movement to the player using arrow keys.
 7.  After that we need to write the conditions for collison.
 8.  We should check the conditions that the player object should not move out of the screen.
-9. If the player collides with enemy, then the players position is retained immediately.
+9.  If the player collides with enemy, then the players position is retained immediately.
 10. If the player reaches the water layer,then the players position is retained after 200ns.
 
 ### Conclusion
