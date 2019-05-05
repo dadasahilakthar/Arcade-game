@@ -19,9 +19,9 @@ For detailed instructions on how to get started, check out this [guide](https://
 
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely
 
-# Aim
+# Aim of the project
 
-To run and play the Arcade game.
+To run and play the Arcade game with the help of Object oriented java script.
 
 # Cloning of the Project
 
