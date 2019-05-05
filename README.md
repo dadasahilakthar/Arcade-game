@@ -26,9 +26,8 @@ To run and play the Arcade game with the help of Object oriented java script.
 # Cloning of the Project
 
 1.  First we need to clone the project from the udacity blog.
-2.  After that we need to read all the files of given arcade game.
-3.  Now we need to make the changes only in the app.js file.
-4.  then the following steps are to be followed.
+2.  Then read all the files given in the project.
+3.  We need to make the changes only in the app.js file.
 
 ## What I have done to this Project
 1.  We need to resolve some errors in app.js file by running the index file in console.
