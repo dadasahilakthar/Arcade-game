@@ -2,17 +2,21 @@
 // Variables applied to each of our instances go here,
 // we've provided one for you to get started
 
-// setting x and y values(position) of enemies
-// when an instance is created(CONTRUCTOR)
-var Enemy = function(x, y, speed) {
-  this.x = x;
-  this.y = y;
-  this.speed = speed;
+// constructor for Enemy
+class Enemy {
+  constructor(x, y, speed) {
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
+    this.sprite = 'images/enemy-bug.png';
+  }
+}
 
-  // The image/sprite for our enemies, this uses
-  // a helper we've provided to easily load images
-  this.sprite = 'images/enemy-bug.png';
-};
+//
+//   // The image/sprite for our enemies, this uses
+//   // a helper we've provided to easily load images
+//   this.sprite = 'images/enemy-bug.png';
+// };
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -60,11 +64,13 @@ for (i = 0; i < enemies.length; i++) {
 // a handleInput() method.
 
 // constructor for player
-var Player = function(x, y) {
-  this.x = x;
-  this.y = y;
-  this.sprite = 'images/char-boy.png';
-};
+class Player {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.sprite = 'images/char-boy.png';
+  }
+}
 //update()
 Player.prototype.update = function(dt) {
   if (player.y < 0) {
@@ -81,7 +87,7 @@ Player.prototype.render = function() {
 };
 // instance for  player
 var player = new Player(200, 410);
-player.handleInput = function(e) {
+Player.prototype.handleInput = function(e) {
   //for moving player when key is pressed and
   // conditons to make player not to move off the screen
   //left

@@ -19,6 +19,10 @@ For detailed instructions on how to get started, check out this [guide](https://
 
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely
 
+# Aim
+
+To run and play the Arcade game.
+
 # Cloning of the Project
 
 1.  First we need to clone the project from the udacity blog.
@@ -26,20 +30,21 @@ This repository is the starter code for _all_ Udacity students. Therefore, we mo
 3.  Now we need to make the changes only in the app.js file.
 4.  then the following steps are to be followed.
 
-## Procedure to create the arcade game
-
-1.  In the index file we need to add lang, meta tag.After that we need to resolve
-    some errors in app.js file by running the index file in console.
+## What I have done to this Project
+1.  We need to resolve some errors in app.js file by running the index file in console.
 2.  After resolving the errors we get the canvas of the arcade game.
-3.  Then we need to add the player charecter and after that we need to
-    add enemy charecter in a loop for movement,after that we need to give random
-    movement to the enemies by using Math.random() function.
-4.  Then we need to give the movement to the player using arrow keys.
-5.  after that we need to write the conditions for collison.
-6.  After colliding with the enemies and top-layer of the canvas the player should come to the initial position.
+3.  Then we need to add the player object and add enemy object to the canvas.
+4.  Add movement to the enemies by using random() function.
+5.  Add update, render methods for player object.
+6.  We can give the movement to the player using arrow keys.
+7.  After that we need to write the conditions for collison.
+8.  We should check the conditions that the player object should not move out of the screen.
+9. If the player collides with enemy, then the players position is retained immediately.
+10. If the player reaches the water layer,then the players position is retained after 200ns.
 
 ### Conclusion
 
-1.  From this project I have learned how to use the object oriented JavaScript.
+1.  From this project I have learnt Object oriented JavaScript.
 2.  I learnt how to implement the objects and functions.
-3.  I have learnt different ES6 functionalities
+3.  I have learnt how to work with Canvas.
+4.  I have learnt different ES6 functionalities.
