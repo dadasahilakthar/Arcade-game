@@ -1,3 +1,4 @@
+"use strict";
 // Enemies our player must avoid
 // Variables applied to each of our instances go here,
 // we've provided one for you to get started
@@ -8,8 +9,6 @@ class Enemy {
     this.x = x;
     this.y = y;
     this.speed = speed;
-    //The image/sprite for our enemies, this uses
-    //a helper we've provided to easily load image.
     this.sprite = 'images/enemy-bug.png';
   }
 }
@@ -25,41 +24,23 @@ Enemy.prototype.update = function(dt) {
     this.x = 0;
     this.speed = 100 + Math.floor((Math.random() ^ 150) + 1);
   }
-  // conditons for collision
+}
+// Draw the enemy on the screen, required method for game
+Enemy.prototype.render = function() {
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+//function to check collision(function definition for checkCollision())
+Enemy.prototype.checkCollision = function() {
   if (player.x < this.x + 60 && player.x + 62 > this.x && player.y < this.y + 60 && player.y + 65 > this.y) {
     // resetting the players position
     player.x = 200;
     player.y = 410;
   }
-}
-
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
 
-// created allEnemies to store instances of enemies
-var allEnemies = [];
-// Y coordinates for enemies
-var enemies = [60, 140, 230];
-// speeds for enemies
-var speeds = [300, 200, 230];
-// X coordinates for enemies
-var pos = [100, 0, 50];
-// creating instances of enemies
-for (i = 0; i < enemies.length; i++) {
-  // passing parameters to constructor
-  var obj = new Enemy(pos[i], enemies[i], speeds[i]);
-  //adding instances into allEnemies array
-  allEnemies.push(obj);
-}
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-
 // constructor for player
 class Player {
   constructor(x, y) {
@@ -70,8 +51,7 @@ class Player {
 }
 //update()
 Player.prototype.update = function(dt) {
-  if (player.y < 0) {
-
+  if (this.y < 0) {
     setTimeout(function() {
       player.x = 200;
       player.y = 410;
@@ -82,10 +62,28 @@ Player.prototype.update = function(dt) {
 Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+// Now instantiate your objects.
+// Place all enemy objects in an array called allEnemies
+// created allEnemies to store instances of enemies
+var allEnemies = [];
+// Y coordinates for enemies
+var enemies = [60, 140, 230];
+// speeds for enemies
+var speeds = [300, 200, 230];
+// X coordinates for enemies
+var pos = [100, 0, 50];
+// creating instances of enemies
+for ( var i = 0; i < enemies.length; i++) {
+  // passing parameters to constructor
+  var obj = new Enemy(pos[i], enemies[i], speeds[i]);
+  //adding instances into allEnemies array
+  allEnemies.push(obj);
+}
+// Place the player object in a variable called player
 // instance for  player
 var player = new Player(200, 410);
+//for moving player when key is pressed and
 Player.prototype.handleInput = function(e) {
-  //for moving player when key is pressed and
   // conditons to make player not to move off the screen
   //left
   if (e == 'left' && this.x > 0) {

@@ -25,28 +25,35 @@ For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 To run and play the Arcade game with the help of Object oriented java script.
 
-# Cloning of the Project
+## Cloning of the Project
 
 1.  First we need to clone the project from the udacity blog.
 2.  Then read all the files given in the project.
-3.  We need to make the changes only in the app.js file.
 
 ## What I have done to this Project
 
-1.  We need to resolve some errors in app.js file by running the index file in console.
-2.  After resolving the errors we get the canvas of the arcade game.
-3.  Then we need to add the player object and add enemy object to the canvas.
-4.  Add movement to the enemies by using random() function.
-5.  Add update, render methods for player object.
-6.  We can give the movement to the player using arrow keys.
-7.  After that we need to write the conditions for collison.
-8.  We should check the conditions that the player object should not move out of the screen.
-9.  If the player collides with enemy, then the players position is retained immediately.
-10. If the player reaches the water layer,then the players position is retained after 200ns.
+1.  I opened the `index.html` page on browser to run the game.
+2.  I found few errors in developer console and  resolved those errors to  get the canvas of the arcade game.
+3.  Then I added player object and add enemy object to the canvas.
+4.  Added motion to the enemy objects by using `random()` function.
+5.  Added update, render methods for player object.
+6.  movement to the player is given using arrow keys.
+7.  After that I wrote conditions for collision using `checkCollision()`.
+8.  I wrote some conditions such that the player object should not move out of the screen.
+9.  If the player collides with enemy, then the players position is changed to original position.
+10. If the player reaches the water layer, then the player waits for some time and its position is changed to original position.
 
-### Conclusion
+## playing Instructions
 
-1.  From this project I have learnt Object oriented JavaScript.
-2.  I learnt how to implement the objects and functions.
-3.  I have learnt how to work with Canvas.
+  **Left Arrow :**  player moves to the adjacent left block
+  **Right Arrow :** player moves to the adjacent right block
+  **Up Arrow :** player moves to the adjacent upper block
+  **Down Arrow :** player moves to the adjacent lower block
+
+  **Note :** The players position will not exceed canvas
+
+## Conclusion
+1.  From this project I have learnt how to work with Canvas.
+2.  I have learnt Object oriented JavaScript.
+3.  I have learnt how to implement the objects and functions.
 4.  I have learnt different ES6 functionalities.

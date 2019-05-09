@@ -1,3 +1,4 @@
+'use strict';
 /* Engine.js
  * This file provides the game loop functionality (update entities and render),
  * draws the initial game board on the screen, and then calls the update and
@@ -79,9 +80,14 @@ var Engine = (function(global) {
    */
   function update(dt) {
     updateEntities(dt);
-    // checkCollisions();
+    checkCollisions();
   }
 
+  function checkCollisions() {
+    allEnemies.forEach(function(enemy) {
+      enemy.checkCollision();
+    });
+  }
   /* This is called by the update function and loops through all of the
    * objects within your allEnemies array as defined in app.js and calls
    * their update() methods. It will then call the update function for your
